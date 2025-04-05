@@ -1,20 +1,35 @@
-function showPopup() {
-  document.getElementById("popup").style.display = "block";
-}
+// Reveal on scroll
+const sections = document.querySelectorAll('.hidden');
+const scrollBtn = document.querySelector('.scroll-top');
 
-function closePopup() {
-  document.getElementById("popup").style.display = "none";
-}
-
-// Scroll-triggered animations
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.classList.add("show");
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
     }
   });
 }, {
-  threshold: 0.1,
+  threshold: 0.2
 });
 
-document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
+sections.forEach(section => {
+  observer.observe(section);
+});
+
+// Scroll-to-top button
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 250) {
+    scrollBtn.classList.add('show');
+  } else {
+    scrollBtn.classList.remove('show');
+  }
+});
+
+// Popup image
+function showPopup() {
+  document.getElementById('popup').style.display = 'flex';
+}
+function closePopup() {
+  document.getElementById('popup').style.display = 'none';
+}
