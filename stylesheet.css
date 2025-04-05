@@ -1,142 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
 body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #f9fafb;
-    color: #1e293b;
-    scroll-behavior: smooth;
+  background: #f4f7fb;
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+header {
+  background: #1a1a40;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  position: relative;
+}
+
+.logo {
+  width: 70px;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+
+.tagline {
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+main {
+  padding: 3rem 1.5rem;
+}
+
+section {
+  margin-bottom: 4rem;
+}
+
+h2, h3 {
+  color: #1a1a40;
+  margin-bottom: 1rem;
+}
+
+ul {
+  list-style-type: square;
+  padding-left: 1.5rem;
+}
+
+.partner-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.partner-logos img {
+  width: 160px;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.5s ease;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.partner-logos img:hover {
+  transform: scale(1.1);
+}
+
+blockquote {
+  font-style: italic;
+  margin: 1rem 0;
+  padding-left: 1rem;
+  border-left: 4px solid #1a1a40;
+}
+
+.contact a {
+  display: block;
+  margin: 0.5rem 0;
+  color: #0056b3;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact a:hover {
+  color: #007bff;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 10px 20px;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #003d80;
+  transform: scale(1.05);
+}
+
+#popup {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.85);
+  animation: fadeIn 0.4s ease;
+}
+
+#popup img {
+  display: block;
+  max-width: 80%;
+  max-height: 80%;
+  margin: 5% auto;
+  border-radius: 10px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 30px;
+  right: 60px;
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #1a1a40;
+  color: white;
+  margin-top: 4rem;
+}
+
+/* Animations */
+.hidden {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
-  header {
-    text-align: center;
-    background-color: #0f172a;
-    color: white;
-    padding: 30px 15px;
+  to {
+    opacity: 1;
   }
-  
-  .logo {
-    width: 80px;
-    height: auto;
-  }
-  
-  .tagline {
-    font-size: 1.1em;
-    margin-top: 8px;
-    color: #cbd5e1;
-  }
-  
-  .hero {
-    text-align: center;
-    padding: 60px 20px;
-    background: linear-gradient(to right, #3b82f6, #06b6d4);
-    color: white;
-    transition: 0.5s;
-  }
-  
-  .hero button {
-    margin-top: 20px;
-    padding: 12px 24px;
-    background-color: white;
-    color: #0f172a;
-    border: none;
-    font-weight: bold;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  .hero button:hover {
-    background-color: #f1f5f9;
-  }
-  
-  .why-us, .services, .gallery, .map, .contact {
-    padding: 40px 20px;
-    text-align: center;
-  }
-  
-  .services .cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
-  }
-  
-  .card {
-    background-color: #e0f2fe;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    width: 200px;
-    transition: transform 0.3s ease;
-  }
-  
-  .card:hover {
-    transform: scale(1.05);
-  }
-  
-  .gallery .images {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-top: 20px;
-  }
-  
-  .gallery img {
-    width: 300px;
-    height: auto;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-  }
-  
-  .gallery img:hover {
-    transform: scale(1.03);
-  }
-  
-  .map iframe {
-    border: none;
-    margin-top: 15px;
-    border-radius: 8px;
-  }
-  
-  .popup {
-    position: fixed;
-    display: none;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .popup-content {
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    max-width: 500px;
-    text-align: center;
-    position: relative;
-    animation: fadeIn 0.3s ease-in-out;
-  }
-  
-  .popup-content img {
-    width: 100%;
-    border-radius: 8px;
-    margin: 20px 0;
-  }
-  
-  .close {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 1.5em;
-    cursor: pointer;
-  }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  
+}
