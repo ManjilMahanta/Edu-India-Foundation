@@ -1,165 +1,199 @@
+/* Reset & Base Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
-  background: #f4f7fb;
-  color: #333;
+  background: #f5f7fa;
+  color: #222;
   line-height: 1.6;
-  overflow-x: hidden;
 }
 
 header {
-  background: #1a1a40;
-  color: white;
+  background: #013a63;
+  color: #fff;
   text-align: center;
   padding: 2rem 1rem;
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.logo {
-  width: 70px;
-  position: absolute;
-  left: 20px;
-  top: 20px;
+header .logo {
+  width: 80px;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  letter-spacing: 1.5px;
 }
 
 .tagline {
-  font-style: italic;
-  margin-top: 0.5rem;
+  font-size: 1rem;
+  opacity: 0.9;
 }
 
-main {
-  padding: 3rem 1.5rem;
-}
-
-section {
-  margin-bottom: 4rem;
+/* Sections */
+main section {
+  padding: 3rem 2rem;
+  max-width: 1000px;
+  margin: auto;
 }
 
 h2, h3 {
-  color: #1a1a40;
+  color: #013a63;
   margin-bottom: 1rem;
+  font-weight: 600;
 }
 
 ul {
-  list-style-type: square;
-  padding-left: 1.5rem;
+  list-style: square inside;
+  margin-top: 1rem;
 }
 
 .partner-logos {
   display: flex;
+  justify-content: space-around;
   flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-  margin-top: 1rem;
+  gap: 2rem;
+  margin-top: 1.5rem;
 }
 
 .partner-logos img {
-  width: 160px;
+  width: 180px;
   height: auto;
   border-radius: 10px;
-  transition: transform 0.5s ease;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .partner-logos img:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 blockquote {
   font-style: italic;
+  color: #444;
+  background: #e0f7fa;
+  padding: 1rem;
+  border-left: 5px solid #0288d1;
   margin: 1rem 0;
-  padding-left: 1rem;
-  border-left: 4px solid #1a1a40;
 }
 
 .contact a {
-  display: block;
+  display: inline-block;
   margin: 0.5rem 0;
-  color: #0056b3;
+  color: #0288d1;
   text-decoration: none;
-  transition: color 0.3s;
+  font-weight: 500;
 }
 
 .contact a:hover {
-  color: #007bff;
+  text-decoration: underline;
 }
 
 button {
-  margin-top: 1rem;
-  padding: 10px 20px;
-  background-color: #0056b3;
-  color: white;
+  padding: 0.7rem 1.2rem;
+  background: #0288d1;
+  color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
+  margin-top: 1rem;
+  transition: background 0.3s ease;
 }
 
 button:hover {
-  background-color: #003d80;
-  transform: scale(1.05);
+  background: #01579b;
 }
 
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: #013a63;
+  color: white;
+  margin-top: 4rem;
+}
+
+/* Popup (Full screen Brochure View) */
 #popup {
   display: none;
   position: fixed;
   z-index: 999;
-  left: 0;
   top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.85);
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.95);
   animation: fadeIn 0.4s ease;
 }
 
 #popup img {
   display: block;
-  max-width: 80%;
-  max-height: 80%;
-  margin: 5% auto;
-  border-radius: 10px;
+  max-width: 90%;
+  max-height: 90%;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
 .close-btn {
   position: absolute;
-  top: 30px;
-  right: 60px;
+  top: 20px;
+  right: 30px;
   font-size: 3rem;
   color: white;
   cursor: pointer;
+  z-index: 1000;
 }
 
-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #1a1a40;
-  color: white;
-  margin-top: 4rem;
-}
-
-/* Animations */
+/* Scroll Reveal Animation */
 .hidden {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
 }
 
-.show {
+.reveal {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0px);
 }
 
+/* Animation Keyframes */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive Layout */
+@media screen and (max-width: 768px) {
+  .partner-logos {
+    flex-direction: column;
+    align-items: center;
   }
-  to {
-    opacity: 1;
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .tagline {
+    font-size: 0.9rem;
+  }
+
+  button {
+    width: 100%;
   }
 }
