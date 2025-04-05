@@ -7,73 +7,95 @@
   <link rel="stylesheet" href="stylesheet.css" />
 </head>
 <body>
-
-  <!-- Header -->
   <header>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Education_Icons_05.svg/1024px-Education_Icons_05.svg.png" class="logo" alt="Edu India Logo"/>
-    <h1>Edu India Foundation</h1>
-    <p class="tagline">Empowering Minds, Enabling Futures</p>
+    <img src="logo.jpg" alt="Edu India Foundation Logo" class="logo" />
+    <h1>EDU INDIA FOUNDATION</h1>
+    <p class="tagline">Shaping Futures, Guiding Success</p>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h2>Join hands to bring education to every corner of India!</h2>
-    <p>Together, we can create opportunities and empower the youth.</p>
-    <button onclick="showPopup()">Join Us In Making A Difference!</button>
-  </section>
+  <main>
+    <section class="hero hidden">
+      <h2>Empowering Dreams Through Education</h2>
+      <p>
+        At Edu India Foundation, we believe every student deserves a roadmap to success.
+        With expert mentors and trusted university partners, we bridge the gap between ambition and achievement.
+      </p>
+    </section>
 
-  <!-- Why Us -->
-  <section class="why-us">
-    <h2>Why Choose Us?</h2>
-    <p>We provide free education, mentorship, and digital learning opportunities to underprivileged children in India. Our efforts are powered by passionate volunteers and changemakers like you.</p>
-  </section>
+    <section class="why-us hidden">
+      <h3>Why Choose Us?</h3>
+      <p>
+        With over a decade of experience, EIF stands as a beacon for students seeking guidance in career planning,
+        academic counseling, and global admissions. Our results speak through thousands of successful stories.
+      </p>
+    </section>
 
-  <!-- Services -->
-  <section class="services">
-    <h2>Our Programs</h2>
-    <div class="cards">
-      <div class="card">Smart Classrooms</div>
-      <div class="card">Digital Literacy</div>
-      <div class="card">Skill Development</div>
-      <div class="card">Mentorship</div>
-      <div class="card">Scholarships</div>
-    </div>
-  </section>
+    <section class="services hidden">
+      <h3>Our Services</h3>
+      <ul>
+        <li>Career & Academic Counseling</li>
+        <li>Admissions to Premier Indian Colleges</li>
+        <li>Global Study Opportunities</li>
+        <li>Consultancy & Visa Guidance</li>
+        <li>Mentorship and Interview Preparation</li>
+      </ul>
+    </section>
 
-  <!-- Gallery -->
-  <section class="gallery">
-    <h2>Moments From The Field</h2>
-    <div class="images">
-      <img src="https://source.unsplash.com/300x200/?students,education" alt="Education 1"/>
-      <img src="https://source.unsplash.com/300x200/?school,children" alt="Education 2"/>
-      <img src="https://source.unsplash.com/300x200/?classroom,learning" alt="Education 3"/>
-    </div>
-  </section>
+    <section class="about hidden">
+      <h3>Our Mission</h3>
+      <p>
+        We aim to revolutionize education consultancy by providing transparent, ethical, and student-centric services.
+        Our goal is not just admissions—but lasting impact, confidence, and excellence.
+      </p>
+    </section>
 
-  <!-- Map -->
-  <section class="map">
-    <h2>Find Us Here</h2>
-    <p>Visit one of our learning centers to see the change firsthand.</p>
-    <iframe src="https://g.co/kgs/4DKx3Y8" width="100%" height="400" allowfullscreen loading="lazy"></iframe>
-  </section>
+    <section class="partners hidden">
+      <h3>Our Esteemed Partners</h3>
+      <p>
+        We're proud to partner with India's most trusted educational institutions.
+        These collaborations help us bring the best opportunities to our students.
+      </p>
+      <div class="partner-logos">
+        <img src="srm.jpg" alt="SRM University" />
+        <img src="zoram.jpg" alt="Zoram Medical College" />
+        <img src="sapthagiri.jpg" alt="Saptagiri Institute" />
+        <img src="jss.jpg" alt="JSS Academy" />
+      </div>
+    </section>
 
-  <!-- Footer -->
-  <footer class="contact">
-    <p>Contact us at <a href="mailto:info@eduindia.org">info@eduindia.org</a></p>
-    <p>© 2025 Edu India Foundation</p>
+    <section class="testimonials hidden">
+      <h3>What Students Say</h3>
+      <blockquote>
+        “EIF helped me find my dream university. The personal attention I received was beyond expectations.”
+      </blockquote>
+      <p>- Aryan Sharma, MBBS Student</p>
+    </section>
+
+    <section class="contact hidden">
+      <h3>Contact Us</h3>
+      <p>
+        <strong>Address:</strong> Zoo-Narengi Rd, opposite GRC Restaurant,<br />
+        Bhaskar Nagar, Guwahati, Assam 781021
+      </p>
+      <p><a href="mailto:eifghy21@gmail.com">📧 eifghy21@gmail.com</a></p>
+      <p><a href="https://wa.me/917002086090" target="_blank">📞 +91 70020 86090</a></p>
+      <button onclick="showPopup()">Click to View Our Office</button>
+      <div id="popup">
+        <span onclick="closePopup()" class="close-btn">&times;</span>
+        <img src="IMG_1728.JPG" alt="Office Image" />
+      </div>
+    </section>
+
+    <section class="map hidden">
+      <h3>Visit Us</h3>
+      <a href="https://g.co/kgs/XM6CyTN" target="_blank">📍 Open in Google Maps</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Edu India Foundation | Designed with ❤️ for student success</p>
   </footer>
 
-  <!-- Popup Section -->
-  <div class="popup" id="popup">
-    <div class="popup-content">
-      <span class="close" onclick="closePopup()">&times;</span>
-      <h3>Thanks for showing interest!</h3>
-      <p>We're excited to have you join us in shaping the future. Our team will contact you shortly.</p>
-      <img src="https://source.unsplash.com/400x250/?helping,hands" alt="Join Us Image" />
-    </div>
-  </div>
-
-  <!-- JS -->
   <script src="script.js"></script>
 </body>
 </html>
